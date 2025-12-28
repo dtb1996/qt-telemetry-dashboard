@@ -1,0 +1,54 @@
+# ===== Build directories =====
+build/
+build-*/
+cmake-build-*/
+out/
+dist/
+
+# ===== CMake generated files =====
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+compile_commands.json
+
+# ===== Qt generated files =====
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+*.qm
+*.prl
+
+# ===== Object files & binaries =====
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# ===== Qt Creator user files =====
+*.autosave
+CMakeLists.txt.user*
+*creator.user*
+
+# ===== IDE / OS noise =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== Python virtual environments =====
+venv/
+.venv/
+env/
+.env/
+
+
