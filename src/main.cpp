@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QNetworkProxyFactory>
 
 #include "app/AppController.h"
 
@@ -9,16 +8,9 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QNetworkProxyFactory::setUseSystemConfiguration(true);
-
-    qmlRegisterSingletonType<AppController>(
-        "QtTelemetry",
-        1, 0,
-        "AppController",
-        [](QQmlEngine*, QJSEngine*) -> QObject* {
-            return new AppController();
-        }
-    );
+    auto controller = new AppController();
+    QQmlEngine::setObjectOwnership(controller, QQmlEngine::CppOwnership);
+    qmlRegisterSingletonInstance("QtTelemetry", 1, 0, "AppController", controller);
 
     QQmlApplicationEngine engine;
 

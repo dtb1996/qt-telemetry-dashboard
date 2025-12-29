@@ -6,6 +6,7 @@ import "../components"
 
 Rectangle {
     color: "#4c4c53"
+    radius: 8
 
     ColumnLayout {
         anchors.fill: parent
@@ -21,9 +22,7 @@ Rectangle {
             Button {
                 text: qsTr("Connect")
                 enabled: !AppController.appState.connected
-                onClicked: {
-                    AppController.connectToServer("wss://echo.websocket.events")
-                }
+                onClicked: AppController.connectToServer("ws://localhost:8080")
             }
 
             Button {
@@ -48,6 +47,7 @@ Rectangle {
                 anchors.fill: parent
                 anchors.margins: 8
                 spacing: 6
+                clip: true
                 model: AppController.telemetryModel
 
                 delegate: TelemetryCard {}

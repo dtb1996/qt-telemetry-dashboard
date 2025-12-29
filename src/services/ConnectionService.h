@@ -29,5 +29,5 @@ private slots:
     void onError(QAbstractSocket::SocketError error);
 
 private:
-    QWebSocket m_webSocket;
+    QWebSocket* m_webSocket;
 };

@@ -1,5 +1,4 @@
 #include "TelemetryModel.h"
-#include <QDebug>
 
 TelemetryModel::TelemetryModel(QObject *parent)
     : QAbstractListModel(parent)
