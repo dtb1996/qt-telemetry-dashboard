@@ -17,6 +17,8 @@ Rectangle {
         }
 
         RowLayout {
+            Layout.leftMargin: 12
+            Layout.rightMargin: 12
             spacing: 8
 
             Button {
