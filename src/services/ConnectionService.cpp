@@ -49,5 +49,7 @@ void ConnectionService::onTextMessageReceived(const QString &message)
 
 void ConnectionService::onError(QAbstractSocket::SocketError error)
 {
-    emit errorOccurred(m_webSocket.errorString());
+    const auto err = QString("WebSocket error: %1 (%2)").arg(m_webSocket.errorString()).arg(m_webSocket.state());
+
+    emit errorOccurred(err);
 }

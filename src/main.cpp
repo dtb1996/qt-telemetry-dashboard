@@ -1,12 +1,15 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QNetworkProxyFactory>
 
 #include "app/AppController.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    QNetworkProxyFactory::setUseSystemConfiguration(true);
 
     qmlRegisterSingletonType<AppController>(
         "QtTelemetry",
